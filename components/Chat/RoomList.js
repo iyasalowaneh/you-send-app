@@ -10,7 +10,7 @@ import RoomItem from "./RoomItem";
 import { useSelector } from "react-redux";
 
 const RoomList = ({ navigation }) => {
-  const users = useSelector((state) => state.usersReducer.usersList);
+  const users = useSelector((state) => state.usersList.usersList);
   console.log(users)
   const loading = useSelector((state) => state.usersReducer.loading);
   if (loading) return <Spinner />;

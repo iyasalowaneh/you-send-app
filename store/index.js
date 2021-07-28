@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { checkForToken, fetchUsers } from "./actions/authActions";
-
+import { checkForToken } from "./actions/authActions";
+import { fetchUsers } from "./actions/roomActions";
 import rootReducer from "./reducers/index";
 
 const store = createStore(
