@@ -1,10 +1,6 @@
 import * as actionTypes from "./types";
 import instance from "./instance";
 
-
-
-
-
 export const fetchUsers = () => {
   return async (dispatch) => {
     try {
@@ -12,15 +8,10 @@ export const fetchUsers = () => {
       dispatch({
         type: actionTypes.FETCH_USERS,
         payload: res.data,
-      });        
-       console.log(res.data)
-
+      });
+      console.log(res.data); //Remove console log
     } catch (error) {
       console.log(error);
     }
   };
 };
-
-
-
-

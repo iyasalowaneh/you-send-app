@@ -1,20 +1,20 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { List, Spinner } from "native-base";
+import { View, Text } from "react-native"; //Remove unused import
+import { useSelector } from "react-redux";
 
-//components
+//Components
 import RoomItem from "./RoomItem";
 
-// Styling
-
-import { useSelector } from "react-redux";
+//Styling
+import { List, Spinner } from "native-base";
 
 const RoomList = ({ navigation }) => {
   const users = useSelector((state) => state.usersList.usersList);
-  console.log(users)
+  console.log(users);
   const loading = useSelector((state) => state.usersReducer.loading);
   if (loading) return <Spinner />;
 
+  //Change to const
   let chatArray = users.map((user) => (
     <RoomItem user={user} key={user.id} navigation={navigation} />
   ));

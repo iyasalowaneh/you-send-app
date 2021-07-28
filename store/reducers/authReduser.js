@@ -4,6 +4,8 @@ const initialState = {
   users: null,
   loading: true,
 };
+
+//Rename to authReducer
 const authReduser = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_USER:
@@ -12,7 +14,7 @@ const authReduser = (state = initialState, action) => {
         users: action.payload,
         loading: false,
       };
-     
+
     default:
       return state;
   }

@@ -1,17 +1,10 @@
+import instance from "./instance";
+import decode from "jwt-decode";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as actionTypes from "./types";
-import decode from "jwt-decode";
-import instance from "./instance";
 
-
-
-
-
-
-
-
-export const signup = (newUser,navigation) => {
-  console.log(newUser)
+export const signup = (newUser, navigation) => {
+  console.log(newUser); //Remove console log
   return async () => {
     try {
       const res = await instance.post("/signup", newUser);
@@ -21,15 +14,15 @@ export const signup = (newUser,navigation) => {
     }
   };
 };
+
 export const signin = (userData, navigation) => {
   return async (dispatch) => {
     try {
       const res = await instance.post("/signin", userData);
-console.log(userData)
+      console.log(userData); //Remove console log
       dispatch(setUser(res.data.token));
       navigation.push("RoomList");
-      console.log(res.data.token)
-
+      console.log(res.data.token); //Remove console log
     } catch (error) {
       console.log(error);
     }

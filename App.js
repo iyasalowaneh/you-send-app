@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { NavigationContainer } from "@react-navigation/native";
 
-//components
 import RootNavigator from "./components/Navigation";
 export default function App() {
   return (
@@ -19,6 +18,7 @@ export default function App() {
   );
 }
 
+//Unused
 const styles = StyleSheet.create({
   container: {
     flex: 1,
