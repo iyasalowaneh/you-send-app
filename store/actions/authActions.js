@@ -3,6 +3,28 @@ import * as actionTypes from "./types";
 import decode from "jwt-decode";
 import instance from "./instance";
 
+
+
+
+
+export const fetchUsers = () => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.get("/users");
+      dispatch({
+        type: actionTypes.FETCH_USERS,
+        payload: res.data,
+      });        
+       console.log(res.data)
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+
+
 export const signup = (newUser,navigation) => {
   console.log(newUser)
   return async () => {
@@ -20,7 +42,7 @@ export const signin = (userData, navigation) => {
       const res = await instance.post("/signin", userData);
 console.log(userData)
       dispatch(setUser(res.data.token));
-      //  navigation.push("Signin");
+      navigation.push("RoomList");
       console.log(res.data.token)
 
     } catch (error) {

@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 //components
 import Signin from "../users/Signin";
 import Signup from "../users/Signup";
+import RoomList from "../Chat/RoomList";
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
@@ -24,6 +25,8 @@ const RootNavigator = () => {
     >
       <Screen name="Signin" component={Signin} options={{ title: "Signin" }} />
       <Screen name="Signup" component={Signup} options={{ title: "Signup" }} />
+      <Screen name="RoomList" component={RoomList} options={{ title: "RoomList" }} />
+
     </Navigator>
   );
 };

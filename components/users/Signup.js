@@ -4,6 +4,7 @@ import { Button ,Center} from "native-base";
 import { useDispatch } from "react-redux";
 import { signup } from "../../store/actions/authActions";
 import { ImageBackground } from "react-native";
+import PhoneInput from "react-native-phone-number-input";
 
 const Signup = ({navigation}) => {
   dispatch = useDispatch();
@@ -34,13 +35,13 @@ const Signup = ({navigation}) => {
         style={{  width: "100%" }}
 
       />
-      <Input
+      <PhoneInput
         placeholder="phonenumber"
         onChangeText={(value) => setUser({ ...user, phonenumber: value })}
         color="black"
         backgroundColor="white"
         style={{  width: "100%" }}
-
+        
       />
    
       <Button onPress={handleSubmit}>Signup</Button>
