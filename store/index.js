@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { checkForToken } from "./actions/authActions";
+import { checkForToken, fetchUsers } from "./actions/authActions";
 
 import rootReducer from "./reducers/index";
 
@@ -10,5 +10,6 @@ const store = createStore(
 );
 
 store.dispatch(checkForToken());
+store.dispatch(fetchUsers());
 
 export default store;

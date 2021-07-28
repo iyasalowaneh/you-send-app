@@ -4,6 +4,7 @@ import { Button ,Center} from "native-base";
 import { useDispatch } from "react-redux";
 import { signin } from "../../store/actions/authActions";
 import { ImageBackground } from "react-native";
+import PhoneInput from "react-native-phone-number-input";
 
 const Signin = ({ navigation }) => {
   dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Signin = ({ navigation }) => {
 
 <Center flex={1}>
     <>
-      <Input
+      <PhoneInput
         placeholder="phonenumber"
         onChangeText={(value) => setUser({ ...user, username: value })}
         autoCapitalize="none"
