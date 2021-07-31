@@ -6,12 +6,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Signin from "../users/Signin";
 import Signup from "../users/Signup";
 import RoomList from "../Chat/RoomList";
+import ChatList from "../Chat/ChatList";
 const RootNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();
 
   return (
     <Navigator
-      initialRouteName="Signup"
+      initialRouteName="Signin"
       screenOptions={{
         cardStyle: { backgroundColor: "#ade8f4" },
         headerTintColor: "#03045e",
@@ -26,6 +27,7 @@ const RootNavigator = () => {
       <Screen name="Signin" component={Signin} options={{ title: "Signin" }} />
       <Screen name="Signup" component={Signup} options={{ title: "Signup" }} />
       <Screen name="RoomList" component={RoomList} options={{ title: "RoomList" }} />
+      <Screen name="ChatList" component={ChatList} options={{ title: "ChatList" }} />
 
     </Navigator>
   );
