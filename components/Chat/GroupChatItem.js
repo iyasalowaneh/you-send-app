@@ -1,9 +1,12 @@
 import React from "react";
 import { List } from "native-base";
 import { Text} from "react-native";
+import { useSelector } from "react-redux";
 
-const ChatItem = ({ message }) => {
-  
+const GroupChatItem = ({ message }) => {
+    
+
+
   return (
     <List>
   
@@ -16,4 +19,4 @@ const ChatItem = ({ message }) => {
   );
 };
 
-export default ChatItem;
+export default GroupChatItem;

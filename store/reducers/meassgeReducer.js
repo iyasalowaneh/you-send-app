@@ -22,6 +22,11 @@ const messagRreducer = (state = initialState, action) => {
           loading: false,
 
         };
+        case actionType.ADD_MESSAGE_GROUP:
+        return {
+          ...state,
+          messages: [...state.messages, action.payload.newMessage],
+        };
     default:
       return state;
   }

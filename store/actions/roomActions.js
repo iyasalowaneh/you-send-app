@@ -13,7 +13,7 @@ export const fetchUsers = () => {
         type: actionTypes.FETCH_USERS,
         payload: res.data,
       });        
-       console.log(res.data)
+      // console.log(res.data)
 
     } catch (error) {
       console.log(error);

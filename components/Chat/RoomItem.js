@@ -6,7 +6,7 @@ import { List, Divider } from 'react-native-paper';
 const RoomItem = ({ user, navigation }) => {
   return (
     <TouchableOpacity
-            onPress={() => navigation.navigate('ChatList')}
+            onPress={() => navigation.navigate('ChatList',{reciverId:user.id})}
           >
     <List.Item
     title={user.name}

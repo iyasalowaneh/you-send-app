@@ -11,7 +11,7 @@ import instance from "./instance";
 
 
 export const signup = (newUser,navigation) => {
-  console.log(newUser)
+ // console.log(newUser)
   return async () => {
     try {
       const res = await instance.post("/signup", newUser);
@@ -25,10 +25,10 @@ export const signin = (userData, navigation) => {
   return async (dispatch) => {
     try {
       const res = await instance.post("/signin", userData);
-console.log(userData)
+//console.log(userData)
       dispatch(setUser(res.data.token));
       navigation.push("RoomList");
-      console.log(res.data.token)
+      //console.log(res.data.token)
 
     } catch (error) {
       console.log(error);
