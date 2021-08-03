@@ -12,9 +12,9 @@ const RootNavigator = () => {
 
   return (
     <Navigator
-      initialRouteName="Signin"
+      initialRouteName="Signup"
       screenOptions={{
-        cardStyle: { backgroundColor: "#ade8f4" },
+        cardStyle: { backgroundColor: "#91EAE4" },
         headerTintColor: "#03045e",
         headerStyle: {
           backgroundColor: "#00b4d8",

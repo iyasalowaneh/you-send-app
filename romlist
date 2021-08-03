@@ -103,3 +103,34 @@ const loading = useSelector((state) => state.messages.loading);
 };
 
 export default ChatList;
+
+
+
+if (reciverId > 0) return  (  <> <Text><List>{chatGroupArray}</List></Text> 
+<Input
+  placeholder="message"
+  onChangeText={(value) => SetMessage({ ...message, content: value })}
+  color="black"
+  backgroundColor="white"
+  style={{  width: "100%" }}
+  />
+        <Button onPress={handleSubmit}>Send</Button></>)
+
+  
+
+
+if (roomId > 0) return (<> <Text><List>{chatGroupArray}</List></Text>
+
+<Input
+placeholder="message"
+onChangeText={(value) => SetMessage({ ...message, content: value })}
+color="black"
+backgroundColor="white"
+style={{  width: "100%" }}
+/>
+      <Button onPress={handleSubmit2}>Send</Button> </>)
+
+
+
+};
+  

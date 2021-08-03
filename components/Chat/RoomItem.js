@@ -1,8 +1,7 @@
 import React from "react";
-import { Text, TouchableOpacity , Image ,StyleSheet} from "react-native";
-import { List, Divider } from 'react-native-paper';
+import {  TouchableOpacity , Image ,StyleSheet} from "react-native";
+import { List, } from 'react-native-paper';
 
-// import { Image } from "../../styles";
 const RoomItem = ({ user, navigation }) => {
   return (
     <TouchableOpacity
@@ -12,8 +11,8 @@ const RoomItem = ({ user, navigation }) => {
     title={user.name}
     description={user.status}
     left={props => <Image
-        style={{ width: "10%", height: "10%" }}
-       source={{ uri: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"  }} />}
+        style={{ width: "10%", height: "55%" }}
+       source={{uri: user.image  }} />}
       //  uri: user.image
 
   /></TouchableOpacity>
