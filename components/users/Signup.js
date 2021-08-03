@@ -1,9 +1,8 @@
-import { Input } from "native-base";
 import React, { useState } from "react";
-import { Button ,Center} from "native-base";
+import { Button, Center } from "native-base";
 import { useDispatch } from "react-redux";
 import { signup } from "../../store/actions/authActions";
-import { ImageBackground } from "react-native";
+import { TextInput ,StyleSheet} from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 
 const Signup = ({navigation}) => {
@@ -11,6 +10,8 @@ const Signup = ({navigation}) => {
   const [user, setUser] = useState({
     name: "",
     phonenumber: "",
+    image: "",
+    status: ""
    
   });
   const handleSubmit = (event) => {
@@ -18,34 +19,60 @@ const Signup = ({navigation}) => {
     dispatch(signup(user,navigation));
   };
   return (
-    <ImageBackground
-      style={{ flex: 1, width: "100%", height: "100%" }}
-      source={{
-        uri: "http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg",
-      }}
+    <
     >
-    <Center flex={1}>
 
-      <Input
+      <TextInput 
         placeholder="name"
         onChangeText={(value) => setUser({ ...user, name: value })}
         autoCapitalize="none"
+        style={styles.input}
         color="black"
         backgroundColor="white"
-        style={{  width: "100%" }}
 
       />
-      <PhoneInput
+      <TextInput 
+      placeholder="status"
+      onChangeText={(value) => setUser({ ...user, status: value })}
+      autoCapitalize="none"
+      style={styles.input}
+      color="black"
+      backgroundColor="white"
+
+    />
+    <TextInput 
+    placeholder="image"
+    onChangeText={(value) => setUser({ ...user, image: value })}
+    autoCapitalize="none"
+    style={styles.input}
+    color="black"
+    backgroundColor="white"
+
+  />
+  <Center >
+ <PhoneInput
         placeholder="phonenumber"
         onChangeText={(value) => setUser({ ...user, phonenumber: value })}
-        color="black"
-        backgroundColor="white"
-        style={{  width: "100%" }}
-        
+      
+        style={styles.input}
       />
-   
+   </Center>
       <Button onPress={handleSubmit}>Signup</Button>
-    </Center></ImageBackground>
+    </>
+
+
+
   );
 };
+
+const styles = StyleSheet.create({
+  input: {
+    height: 57,
+    width:310,
+    marginLeft:40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
 export default Signup;

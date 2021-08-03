@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button ,Center} from "native-base";
 import { useDispatch } from "react-redux";
 import { signin } from "../../store/actions/authActions";
-import { ImageBackground } from "react-native";
+import { TextInput ,StyleSheet} from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 
 const Signin = ({ navigation }) => {
@@ -13,35 +13,42 @@ const Signin = ({ navigation }) => {
     event.preventDefault();
     dispatch(signin(user, navigation));
   };
-  return (<ImageBackground
-    style={{ flex: 1, width: "100%", height: "100%" }}
-    source={{
-      uri: "http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg",
-    }}
+  return (<
   >
 
-<Center flex={1}>
-    <>
-      <PhoneInput
-        placeholder="phonenumber"
-        onChangeText={(value) => setUser({ ...user, username: value })}
-        autoCapitalize="none"
-        color="black"
-        backgroundColor="white"
-        style={{  width: "100%" }}
+  <Center>
+   
+  <PhoneInput
+    placeholder="phonenumber"
+    onChangeText={(value) => setUser({ ...user, username: value })}
+    autoCapitalize="none"
+    color="black"
+    backgroundColor="white"
+    style={{  width: "100%" }}
 
-      />
-      <Input
+  /> </Center>
+      <TextInput
         placeholder="code"
         onChangeText={(value) => setUser({ ...user, password: value })}
+        style={styles.input}
         color="black"
         backgroundColor="white"
-        style={{  width: "100%" }}
         />
+       
       <Button onPress={handleSubmit}>Signin</Button>
-      </>
-    </Center>
-    </ImageBackground>
+      
+   
+    </>
   );
 };
+const styles = StyleSheet.create({
+  input: {
+    height: 57,
+    width:310,
+    marginLeft:40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
 export default Signin;
