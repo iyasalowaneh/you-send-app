@@ -7,7 +7,7 @@ import { ImageBackground } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 
 const Signin = ({ navigation }) => {
-  dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [user, setUser] = useState({ username: "", password: "" });
   const handleSubmit = (event) => {
     event.preventDefault();

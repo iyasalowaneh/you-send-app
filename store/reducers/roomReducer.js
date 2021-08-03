@@ -8,7 +8,7 @@ const roomReducer = (state = initialState, action) => {
   switch (action.type) {
     
       case actionTypes.FETCH_USERS:
-      console.log(action.payload)
+      //console.log(action.payload)
       return {
         ...state,
         usersList: action.payload,

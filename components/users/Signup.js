@@ -7,7 +7,7 @@ import { ImageBackground } from "react-native";
 import PhoneInput from "react-native-phone-number-input";
 
 const Signup = ({navigation}) => {
-  dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [user, setUser] = useState({
     name: "",
     phonenumber: "",
